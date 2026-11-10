@@ -1,0 +1,33 @@
+
+> devops-cicd-monitoring-module05@1.0.0 deploy
+> wrangler deploy
+
+
+ ⛅️ wrangler 4.159.0
+────────────────────
+🌀 Building list of assets...
+✨ Read 4 files from the assets directory /home/runner/work/devops-cicd-monitoring-module05/devops-cicd-monitoring-module05/public
+🌀 Starting asset upload...
+🌀 Found 4 new or modified static assets to upload. Proceeding with upload...
++ /favicon.svg
++ /styles.css
++ /index.html
++ /app.js
+Uploaded 1 of 4 assets
+Uploaded 3 of 4 assets
+Uploaded 4 of 4 assets
+✨ Success! Uploaded 4 files (2.80 sec)
+
+Total Upload: 7.70 KiB / gzip: 2.65 KiB
+Worker Startup Time: 1 ms
+Your Worker has access to the following bindings:
+Binding                             Resource
+env.DB (taskflow-module05)          D1 Database
+env.ASSETS                          Assets
+
+Uploaded devops-cicd-monitoring-module05 (6.05 sec)
+Deployed devops-cicd-monitoring-module05 triggers (0.84 sec)
+  https://devops-cicd-monitoring-module05.cloud-webapp-module03.workers.dev
+Current Version ID: 4c67048f-0d65-440d-a480-673e679c4a2c
+
+Cloudflare collects anonymous telemetry about your usage of Wrangler. Learn more at https://github.com/cloudflare/workers-sdk/tree/main/packages/wrangler/telemetry.md

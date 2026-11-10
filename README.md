@@ -65,10 +65,10 @@ If port `8787` is occupied, set `$env:HOST_PORT='8878'` before `docker compose u
 
 Add these repository settings before a `main` push:
 
-- Actions secret `CLOUDFLARE_API_TOKEN`: a least-privilege token scoped to the existing Module 05 Worker and D1 database for deploy, remote migrations and tail logs.
+- Actions secret `CLOUDFLARE_API_TOKEN`: a least-privilege token scoped to the existing Module 05 Worker for deployment and monitoring. Application database queries use the Worker D1 binding.
 - Actions variable `CLOUDFLARE_ACCOUNT_ID`: the account ID; it is configuration, not a secret.
 
-The `main` workflow runs validation first. The deploy job applies migrations, deploys the Worker, runs public HTTPS CRUD tests, and captures sanitized request logs and metrics. Pull requests validate but do not deploy. The workflow has no paid container registry.
+The `main` workflow runs validation and Docker first, then deploys the existing Worker, runs public HTTPS CRUD tests, and captures sanitized request logs and metrics. Pull requests validate but do not deploy. The initial D1 schema was migrated separately during provisioning; future schema migrations use `npm run db:migrate:remote` with an authenticated maintainer session before deployment. CI does not receive direct D1 API access; the running Worker accesses D1 through its binding.
 
 ## Monitoring and security
 
@@ -85,10 +85,10 @@ Evidence files are listed in [evidence/README.md](evidence/README.md). On 2026-1
 
 - Static validation, Worker dry-run build, local migration and the 13-check local smoke test passed.
 - Docker image build passed. The container became healthy, all 13 smoke checks passed over HTTP, JSON request logs were captured, and the project-scoped container, network, volume and temporary local image were removed.
-- The isolated remote D1 database was created and its first migration applied successfully. The production Worker was initially bootstrapped with Wrangler; the main-branch Actions deployment awaits the repository secret `CLOUDFLARE_API_TOKEN`.
+- The isolated remote D1 database was created and its first migration applied successfully. The production Worker was initially bootstrapped with Wrangler. The GitHub repository secret `CLOUDFLARE_API_TOKEN` and variable `CLOUDFLARE_ACCOUNT_ID` are configured; the main deployment passed in [Actions run 42865935108](https://github.com/axell726-cp/devops-cicd-monitoring-module05/actions/runs/42865935108). The secret value remains in GitHub secret storage and is not present in source or evidence.
 - Wrangler deployed the distinct Worker. The public HTTPS smoke test passed all 13 checks; a live tail captured one health request with HTTP 200, 208 ms edge wall time and 2 ms CPU. The saved monitoring evidence is sanitized.
 - Cloudflare dashboard preflight showed Workers Free active and no payment method. This run used Workers Free, D1 Free and public GitHub-hosted runners; no paid plan, domain, card, AWS, Azure, OCI or container registry was used. Expected spend is USD 0; this is not a final billing statement.
-- GitHub Actions validation on `codex/module05-bootstrap` passed in run [42861600357](https://github.com/axell726-cp/devops-cicd-monitoring-module05/actions/runs/42861600357), including both local and Docker smoke suites. Its artifacts are saved under `evidence/github-actions-local/`. The deploy job was intentionally skipped on this non-main branch. The first run hit a port collision; the fix and successful rerun are documented in `evidence/github-validation-attempt1.md`.
+- GitHub Actions validation on `codex/module05-bootstrap` passed in run [42861600357](https://github.com/axell726-cp/devops-cicd-monitoring-module05/actions/runs/42861600357); its artifacts remain under `evidence/github-actions-local/`. The first main deployment attempt stopped on a D1 token-scope error and is documented in `evidence/github-actions-run-42864925787.md`. After removing direct D1 API access from CI, main run [42865935108](https://github.com/axell726-cp/devops-cicd-monitoring-module05/actions/runs/42865935108) passed validation, Docker build/run, Worker deployment, and all 13 public HTTPS smoke checks. Its logs and sanitized monitoring output are saved under `evidence/github-actions-main-validation/` and `evidence/github-actions-deployment/`.
 
 ## Git workflow
 

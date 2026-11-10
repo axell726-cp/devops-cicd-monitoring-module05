@@ -1,0 +1,6 @@
+# Independent public health check
+
+GET https://devops-cicd-monitoring-module05.cloud-webapp-module03.workers.dev/api/health
+UTC: 2026-11-10T17:39:31Z
+HTTP 200
+{"status":"ok","database":"connected"}

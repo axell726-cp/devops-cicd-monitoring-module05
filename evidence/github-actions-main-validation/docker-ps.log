@@ -1,0 +1,2 @@
+NAME                   IMAGE                                COMMAND                  SERVICE   CREATED         STATUS                   PORTS
+taskflow-module05-ci   devops-cicd-monitoring-module05:ci   "docker-entrypoint.s…"   worker    7 seconds ago   Up 6 seconds (healthy)   127.0.0.1:8878->8787/tcp

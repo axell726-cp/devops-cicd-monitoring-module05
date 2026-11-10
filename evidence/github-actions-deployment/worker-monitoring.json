@@ -1,0 +1,235 @@
+{
+  "source": "wrangler tail --format json",
+  "privacy": "Client IP, headers, URL, geolocation, TLS fingerprints and log message content beyond safe request fields were omitted.",
+  "metrics": {
+    "invocationCount": 13,
+    "requestLogCount": 13,
+    "successfulInvocations": 13,
+    "errorInvocations": 0,
+    "httpErrorResponses": 5,
+    "serverErrorResponses": 0,
+    "statusCounts": {
+      "200": 7,
+      "201": 1,
+      "400": 2,
+      "403": 1,
+      "404": 1,
+      "413": 1
+    },
+    "averageWallTimeMs": 41.77,
+    "averageCpuTimeMs": 1.62,
+    "averageApplicationDurationMs": 39.23
+  },
+  "invocations": [
+    {
+      "timestamp": 1794332016097,
+      "scriptName": "devops-cicd-monitoring-module05",
+      "outcome": "ok",
+      "wallTimeMs": 98,
+      "cpuTimeMs": 4,
+      "exceptions": []
+    },
+    {
+      "timestamp": 1794332016366,
+      "scriptName": "devops-cicd-monitoring-module05",
+      "outcome": "ok",
+      "wallTimeMs": 64,
+      "cpuTimeMs": 1,
+      "exceptions": []
+    },
+    {
+      "timestamp": 1794332016566,
+      "scriptName": "devops-cicd-monitoring-module05",
+      "outcome": "ok",
+      "wallTimeMs": 2,
+      "cpuTimeMs": 0,
+      "exceptions": []
+    },
+    {
+      "timestamp": 1794332016609,
+      "scriptName": "devops-cicd-monitoring-module05",
+      "outcome": "ok",
+      "wallTimeMs": 0,
+      "cpuTimeMs": 0,
+      "exceptions": []
+    },
+    {
+      "timestamp": 1794332016660,
+      "scriptName": "devops-cicd-monitoring-module05",
+      "outcome": "ok",
+      "wallTimeMs": 3,
+      "cpuTimeMs": 2,
+      "exceptions": []
+    },
+    {
+      "timestamp": 1794332016724,
+      "scriptName": "devops-cicd-monitoring-module05",
+      "outcome": "ok",
+      "wallTimeMs": 1,
+      "cpuTimeMs": 0,
+      "exceptions": []
+    },
+    {
+      "timestamp": 1794332016784,
+      "scriptName": "devops-cicd-monitoring-module05",
+      "outcome": "ok",
+      "wallTimeMs": 69,
+      "cpuTimeMs": 4,
+      "exceptions": []
+    },
+    {
+      "timestamp": 1794332016903,
+      "scriptName": "devops-cicd-monitoring-module05",
+      "outcome": "ok",
+      "wallTimeMs": 39,
+      "cpuTimeMs": 2,
+      "exceptions": []
+    },
+    {
+      "timestamp": 1794332016998,
+      "scriptName": "devops-cicd-monitoring-module05",
+      "outcome": "ok",
+      "wallTimeMs": 96,
+      "cpuTimeMs": 3,
+      "exceptions": []
+    },
+    {
+      "timestamp": 1794332017152,
+      "scriptName": "devops-cicd-monitoring-module05",
+      "outcome": "ok",
+      "wallTimeMs": 43,
+      "cpuTimeMs": 2,
+      "exceptions": []
+    },
+    {
+      "timestamp": 1794332017285,
+      "scriptName": "devops-cicd-monitoring-module05",
+      "outcome": "ok",
+      "wallTimeMs": 41,
+      "cpuTimeMs": 1,
+      "exceptions": []
+    },
+    {
+      "timestamp": 1794332017370,
+      "scriptName": "devops-cicd-monitoring-module05",
+      "outcome": "ok",
+      "wallTimeMs": 48,
+      "cpuTimeMs": 1,
+      "exceptions": []
+    },
+    {
+      "timestamp": 1794332017466,
+      "scriptName": "devops-cicd-monitoring-module05",
+      "outcome": "ok",
+      "wallTimeMs": 39,
+      "cpuTimeMs": 1,
+      "exceptions": []
+    }
+  ],
+  "requests": [
+    {
+      "requestId": "3ad9d4db-9418-4caa-83d2-5455aeaeb635",
+      "method": "GET",
+      "route": "/api/health",
+      "status": 200,
+      "durationMs": 94,
+      "level": "log"
+    },
+    {
+      "requestId": "7f0c0a65-1d2d-4cf3-b3b2-789ce399a98e",
+      "method": "GET",
+      "route": "/",
+      "status": 200,
+      "durationMs": 59,
+      "level": "log"
+    },
+    {
+      "requestId": "c7344967-a3fb-4bdb-816f-9c979634ff64",
+      "method": "GET",
+      "route": "tasks",
+      "status": 400,
+      "durationMs": 0,
+      "level": "log"
+    },
+    {
+      "requestId": "0383c14b-1e7c-414e-a471-b21117dcb456",
+      "method": "POST",
+      "route": "tasks",
+      "status": 403,
+      "durationMs": 0,
+      "level": "log"
+    },
+    {
+      "requestId": "f42f7e5d-9b5f-4ec7-9f3d-0a07f379f090",
+      "method": "POST",
+      "route": "tasks",
+      "status": 400,
+      "durationMs": 0,
+      "level": "log"
+    },
+    {
+      "requestId": "bec10dd3-eff4-47ef-ace0-3fd3f87bd7c4",
+      "method": "POST",
+      "route": "tasks",
+      "status": 413,
+      "durationMs": 0,
+      "level": "log"
+    },
+    {
+      "requestId": "6688443f-1095-4425-9165-e42a33ccc6a4",
+      "method": "POST",
+      "route": "tasks",
+      "status": 201,
+      "durationMs": 65,
+      "level": "log"
+    },
+    {
+      "requestId": "b7677baf-6818-48d9-8048-f4f8b7f2174c",
+      "method": "GET",
+      "route": "tasks",
+      "status": 200,
+      "durationMs": 36,
+      "level": "log"
+    },
+    {
+      "requestId": "c0693b3b-a2d3-4a96-b0af-47bbc02cfa3b",
+      "method": "PATCH",
+      "route": "task_item",
+      "status": 200,
+      "durationMs": 92,
+      "level": "log"
+    },
+    {
+      "requestId": "b5d49475-5d11-486b-ae98-1b40b7b8333d",
+      "method": "GET",
+      "route": "tasks",
+      "status": 200,
+      "durationMs": 41,
+      "level": "log"
+    },
+    {
+      "requestId": "c571d51e-a61a-48ba-9167-9fc56856713a",
+      "method": "GET",
+      "route": "/api/stats",
+      "status": 200,
+      "durationMs": 39,
+      "level": "log"
+    },
+    {
+      "requestId": "c22c5ada-bfb9-4fea-969e-642293df46af",
+      "method": "DELETE",
+      "route": "task_item",
+      "status": 200,
+      "durationMs": 46,
+      "level": "log"
+    },
+    {
+      "requestId": "c3890b31-3454-44b8-8c5e-73be3294b652",
+      "method": "DELETE",
+      "route": "task_item",
+      "status": 404,
+      "durationMs": 38,
+      "level": "log"
+    }
+  ]
+}

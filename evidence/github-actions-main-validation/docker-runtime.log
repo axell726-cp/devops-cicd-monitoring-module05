@@ -1,0 +1,72 @@
+taskflow-module05-ci  |
+taskflow-module05-ci  | > devops-cicd-monitoring-module05@1.0.0 db:migrate:local
+taskflow-module05-ci  | > wrangler d1 migrations apply taskflow-module05 --local
+taskflow-module05-ci  |
+taskflow-module05-ci  |
+taskflow-module05-ci  |  ⛅️ wrangler 4.159.0
+taskflow-module05-ci  | ────────────────────
+taskflow-module05-ci  | Resource location: local
+taskflow-module05-ci  |
+taskflow-module05-ci  | Use --remote if you want to access the remote instance.
+taskflow-module05-ci  |
+taskflow-module05-ci  | Migrations to be applied:
+taskflow-module05-ci  | ┌───────────────────────┐
+taskflow-module05-ci  | │ name                  │
+taskflow-module05-ci  | ├───────────────────────┤
+taskflow-module05-ci  | │ 0001_create_tasks.sql │
+taskflow-module05-ci  | └───────────────────────┘
+taskflow-module05-ci  | ? About to apply 1 migration(s)
+taskflow-module05-ci  | Your database may not be available to serve requests during the migration, continue?
+taskflow-module05-ci  | 🤖 Using fallback value in non-interactive context: yes
+taskflow-module05-ci  | 🌀 Executing on local database taskflow-module05 (da9d56d7-a22e-4b1d-bfac-c5234de2bb78) from .wrangler/state/v3/d1:
+taskflow-module05-ci  | 🌀 To execute on your remote database, add a --remote flag to your wrangler command.
+taskflow-module05-ci  | 🚣 3 commands executed successfully.
+taskflow-module05-ci  | ┌───────────────────────┬────────┐
+taskflow-module05-ci  | │ name                  │ status │
+taskflow-module05-ci  | ├───────────────────────┼────────┤
+taskflow-module05-ci  | │ 0001_create_tasks.sql │ ✅     │
+taskflow-module05-ci  | └───────────────────────┴────────┘
+taskflow-module05-ci  |
+taskflow-module05-ci  | > devops-cicd-monitoring-module05@1.0.0 dev
+taskflow-module05-ci  | > wrangler dev --port 8787 --ip 0.0.0.0
+taskflow-module05-ci  |
+taskflow-module05-ci  |
+taskflow-module05-ci  |  ⛅️ wrangler 4.159.0 (update available 4.160.0)
+taskflow-module05-ci  | ───────────────────────────────────────────────
+taskflow-module05-ci  | Your Worker has access to the following bindings:
+taskflow-module05-ci  | Binding                             Resource         Mode
+taskflow-module05-ci  | env.DB (taskflow-module05)          D1 Database      local
+taskflow-module05-ci  | env.ASSETS                          Assets           local
+taskflow-module05-ci  |
+taskflow-module05-ci  | ⎔ Starting local server...
+taskflow-module05-ci  | [wrangler:info] Ready on http://0.0.0.0:8787
+taskflow-module05-ci  | [wrangler:info] - http://127.0.0.1:8787
+taskflow-module05-ci  | [wrangler:info] - http://[redacted-ip]:8787
+taskflow-module05-ci  | {"event":"http_request","requestId":"df5ed962-98f0-45ca-8154-d45dd09a01c9","method":"GET","route":"/api/health","status":200,"durationMs":29}
+taskflow-module05-ci  | [wrangler:info] GET /api/health 200 OK (410ms)
+taskflow-module05-ci  | {"event":"http_request","requestId":"2c076a39-672f-49bc-bc8e-d96d5670430c","method":"GET","route":"/api/health","status":200,"durationMs":1}
+taskflow-module05-ci  | [wrangler:info] GET /api/health 200 OK (8ms)
+taskflow-module05-ci  | {"event":"http_request","requestId":"1936103c-9e4c-4bda-a3e6-f22b69bc665a","method":"GET","route":"/","status":200,"durationMs":4}
+taskflow-module05-ci  | [wrangler:info] GET / 200 OK (11ms)
+taskflow-module05-ci  | {"event":"http_request","requestId":"e84aa2fe-31a2-46e1-b767-e7396838c688","method":"GET","route":"tasks","status":400,"durationMs":1}
+taskflow-module05-ci  | [wrangler:info] GET /api/tasks 400 Bad Request (12ms)
+taskflow-module05-ci  | {"event":"http_request","requestId":"36fb5cb3-8ea6-4668-a647-ff3c94ac8846","method":"POST","route":"tasks","status":403,"durationMs":0}
+taskflow-module05-ci  | [wrangler:info] POST /api/tasks 403 Forbidden (8ms)
+taskflow-module05-ci  | {"event":"http_request","requestId":"539c5c8a-e15a-4089-8aa3-5518dcaab74f","method":"POST","route":"tasks","status":400,"durationMs":1}
+taskflow-module05-ci  | [wrangler:info] POST /api/tasks 400 Bad Request (7ms)
+taskflow-module05-ci  | {"event":"http_request","requestId":"3dbcb10f-dd0d-4d52-b169-247e8f4fd8e6","method":"POST","route":"tasks","status":413,"durationMs":0}
+taskflow-module05-ci  | [wrangler:info] POST /api/tasks 413 Payload Too Large (8ms)
+taskflow-module05-ci  | {"event":"http_request","requestId":"c448b3d3-f9d0-4d4b-ac32-3f21572f9caf","method":"POST","route":"tasks","status":201,"durationMs":4}
+taskflow-module05-ci  | [wrangler:info] POST /api/tasks 201 Created (10ms)
+taskflow-module05-ci  | {"event":"http_request","requestId":"9537dcd1-ce54-4a5e-80f6-fca26db17117","method":"GET","route":"tasks","status":200,"durationMs":2}
+taskflow-module05-ci  | [wrangler:info] GET /api/tasks 200 OK (8ms)
+taskflow-module05-ci  | {"event":"http_request","requestId":"839fba7c-a2d4-4ea1-870e-94575ba317db","method":"PATCH","route":"task_item","status":200,"durationMs":5}
+taskflow-module05-ci  | [wrangler:info] PATCH /api/tasks/8dd3663b-0c47-4844-85b6-140e62f9b7b1 200 OK (11ms)
+taskflow-module05-ci  | {"event":"http_request","requestId":"bd581c44-e1ff-4128-80bd-95e422f4a8d4","method":"GET","route":"tasks","status":200,"durationMs":1}
+taskflow-module05-ci  | [wrangler:info] GET /api/tasks 200 OK (7ms)
+taskflow-module05-ci  | {"event":"http_request","requestId":"aba08913-2b4f-41f3-8693-b73240763fff","method":"GET","route":"/api/stats","status":200,"durationMs":2}
+taskflow-module05-ci  | [wrangler:info] GET /api/stats 200 OK (8ms)
+taskflow-module05-ci  | {"event":"http_request","requestId":"135dfdf5-0a3c-41ee-839a-686f739be039","method":"DELETE","route":"task_item","status":200,"durationMs":3}
+taskflow-module05-ci  | [wrangler:info] DELETE /api/tasks/8dd3663b-0c47-4844-85b6-140e62f9b7b1 200 OK (8ms)
+taskflow-module05-ci  | {"event":"http_request","requestId":"fef2d381-06c4-4518-b27f-2c038c290884","method":"DELETE","route":"task_item","status":404,"durationMs":1}
+taskflow-module05-ci  | [wrangler:info] DELETE /api/tasks/8dd3663b-0c47-4844-85b6-140e62f9b7b1 404 Not Found (7ms)
