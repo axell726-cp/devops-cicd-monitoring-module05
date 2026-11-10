@@ -85,10 +85,10 @@ Evidence files are listed in [evidence/README.md](evidence/README.md). On 2026-1
 
 - Static validation, Worker dry-run build, local migration and the 13-check local smoke test passed.
 - Docker image build passed. The container became healthy, all 13 smoke checks passed over HTTP, JSON request logs were captured, and the project-scoped container, network, volume and temporary local image were removed.
-- The isolated remote D1 database was created and its first migration applied successfully.
+- The isolated remote D1 database was created and its first migration applied successfully. The production Worker was initially bootstrapped with Wrangler; the main-branch Actions deployment awaits the repository secret `CLOUDFLARE_API_TOKEN`.
 - Wrangler deployed the distinct Worker. The public HTTPS smoke test passed all 13 checks; a live tail captured one health request with HTTP 200, 208 ms edge wall time and 2 ms CPU. The saved monitoring evidence is sanitized.
 - Cloudflare dashboard preflight showed Workers Free active and no payment method. This run used Workers Free, D1 Free and public GitHub-hosted runners; no paid plan, domain, card, AWS, Azure, OCI or container registry was used. Expected spend is USD 0; this is not a final billing statement.
-- GitHub Actions run status is recorded in the evidence directory after the first run completes.
+- GitHub Actions validation on `codex/module05-bootstrap` passed in run [42861600357](https://github.com/axell726-cp/devops-cicd-monitoring-module05/actions/runs/42861600357), including both local and Docker smoke suites. Its artifacts are saved under `evidence/github-actions-local/`. The deploy job was intentionally skipped on this non-main branch. The first run hit a port collision; the fix and successful rerun are documented in `evidence/github-validation-attempt1.md`.
 
 ## Git workflow
 

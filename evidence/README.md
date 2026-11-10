@@ -10,6 +10,6 @@ Evidence is genuine output from the local Module 05 Worker, Docker Desktop, Wran
 - `cloudflare-bootstrap-deploy.txt`, `worker-url.txt` — first deployment of the new Worker using the already-authenticated Wrangler session.
 - `cloudflare-public-smoke.txt`, `cloudflare-live-health.txt` — public HTTPS response and CRUD/API smoke tests.
 - `cloudflare-live-monitoring.json` — sanitized live Worker invocation metrics and structured `/api/health` log.
-- GitHub Actions artifacts and run link — validation, Docker and post-deploy evidence; added after CI executes.
+- `github-validation-attempt1.md`, `github-actions-validation.md`, `github-actions-local/` — failed first run and the successful Actions validation run with downloaded local/Docker logs. The deploy job was skipped because validation ran on a non-main branch.
 
 Account identifiers, credentials and pre-existing resource names are omitted. The D1 database ID in the project's Wrangler configuration is the binding identifier required by Wrangler, not a credential.
