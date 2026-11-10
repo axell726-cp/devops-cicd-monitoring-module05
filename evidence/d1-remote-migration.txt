@@ -1,0 +1,26 @@
+
+> devops-cicd-monitoring-module05@1.0.0 db:migrate:remote
+> wrangler d1 migrations apply taskflow-module05 --remote
+
+
+ ⛅️ wrangler 4.159.0 (update available 4.160.0)
+───────────────────────────────────────────────
+Resource location: remote
+
+Migrations to be applied:
+┌───────────────────────┐
+│ name                  │
+├───────────────────────┤
+│ 0001_create_tasks.sql │
+└───────────────────────┘
+? About to apply 1 migration(s)
+Your database may not be available to serve requests during the migration, continue?
+🤖 Using fallback value in non-interactive context: yes
+🌀 Executing on remote database taskflow-module05 (da9d56d7-a22e-4b1d-bfac-c5234de2bb78):
+🌀 To execute on your local development database, remove the --remote flag from your wrangler command.
+🚣 Executed 3 commands in 0.47ms
+┌───────────────────────┬────────┐
+│ name                  │ status │
+├───────────────────────┼────────┤
+│ 0001_create_tasks.sql │ ✅     │
+└───────────────────────┴────────┘

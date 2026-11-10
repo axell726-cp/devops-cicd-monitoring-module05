@@ -1,0 +1,12 @@
+.git
+.github
+.gitignore
+node_modules
+.wrangler
+.worker-build
+dist
+evidence
+.env
+.env.*
+.dev.vars
+*.log

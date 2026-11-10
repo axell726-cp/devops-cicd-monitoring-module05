@@ -1,0 +1,31 @@
+
+> devops-cicd-monitoring-module05@1.0.0 deploy
+> wrangler deploy
+
+
+ ⛅️ wrangler 4.159.0 (update available 4.160.0)
+───────────────────────────────────────────────
+🌀 Building list of assets...
+✨ Read 4 files from the assets directory C:\Users\matia\Documents\Projects\INTERSHIP\Módulo5\devops-cicd-monitoring-module05\public
+🌀 Starting asset upload...
+🌀 Found 4 new or modified static assets to upload. Proceeding with upload...
++ /favicon.svg
++ /styles.css
++ /index.html
++ /app.js
+Uploaded 1 of 4 assets
+Uploaded 3 of 4 assets
+Uploaded 4 of 4 assets
+✨ Success! Uploaded 4 files (1.88 sec)
+
+Total Upload: 7.70 KiB / gzip: 2.65 KiB
+Worker Startup Time: 2 ms
+Your Worker has access to the following bindings:
+Binding                             Resource
+env.DB (taskflow-module05)          D1 Database
+env.ASSETS                          Assets
+
+Uploaded devops-cicd-monitoring-module05 (6.01 sec)
+Deployed devops-cicd-monitoring-module05 triggers (0.83 sec)
+  https://devops-cicd-monitoring-module05.cloud-webapp-module03.workers.dev
+Current Version ID: e94039de-a4d2-4700-9015-798c15a7b922

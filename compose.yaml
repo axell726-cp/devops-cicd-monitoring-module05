@@ -1,0 +1,44 @@
+name: devops-cicd-monitoring-module05
+
+services:
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: devops-cicd-monitoring-module05:ci
+    container_name: taskflow-module05-ci
+    init: true
+    ports:
+      - "127.0.0.1:${HOST_PORT:-8787}:8787"
+    volumes:
+      - wrangler-state:/app/.wrangler
+    networks:
+      - taskflow
+    read_only: true
+    tmpfs:
+      - /tmp:size=32m,noexec,nosuid
+      - /app/node_modules/.mf:uid=1000,gid=1000,mode=0700,size=32m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 384m
+    cpus: 1.0
+    restart: "no"
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - "fetch('http://127.0.0.1:8787/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
+      interval: 20s
+      timeout: 4s
+      start_period: 15s
+      retries: 5
+
+networks:
+  taskflow:
+    driver: bridge
+
+volumes:
+  wrangler-state:

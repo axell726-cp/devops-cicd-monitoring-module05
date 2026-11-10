@@ -1,0 +1,297 @@
+Docker runtime validation
+ Network devops-cicd-monitoring-module05_taskflow Creating
+ Volume devops-cicd-monitoring-module05_wrangler-state Creating
+ Volume devops-cicd-monitoring-module05_wrangler-state Creating
+ Network devops-cicd-monitoring-module05_taskflow Creating
+ Volume devops-cicd-monitoring-module05_wrangler-state Created
+ Volume devops-cicd-monitoring-module05_wrangler-state Created
+ Network devops-cicd-monitoring-module05_taskflow Created
+ Network devops-cicd-monitoring-module05_taskflow Created
+ Container taskflow-module05-ci Creating
+ Container taskflow-module05-ci Created
+ Container taskflow-module05-ci Starting
+Error response from daemon: ports are not available: exposing port TCP 127.0.0.1:8787 -> 127.0.0.1:0: listen tcp4 127.0.0.1:8787: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+DOCKER_UP_EXIT=1
+
+=== Retry using isolated host port 8878 ===
+ Image devops-cicd-monitoring-module05:ci Pulling
+ Image devops-cicd-monitoring-module05:ci pull access denied for devops-cicd-monitoring-module05, repository does not exist or may require 'docker login'
+ Image devops-cicd-monitoring-module05:ci Building
+#1 [internal] load local bake definitions
+#1 reading from stdin 679B 0.1s done
+#1 DONE 0.1s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 615B 0.0s done
+#2 DONE 0.1s
+
+#3 [internal] load metadata for docker.io/library/node:22-alpine
+#3 DONE 1.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 144B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [1/7] FROM docker.io/library/node:22-alpine@sha256:0e1754758c2df4cfa3e68d59e2e1b7374bb7fd9ea6328eaaacf15cc934af8202
+#6 resolve docker.io/library/node:22-alpine@sha256:0e1754758c2df4cfa3e68d59e2e1b7374bb7fd9ea6328eaaacf15cc934af8202 0.0s done
+#6 DONE 0.1s
+
+#5 [internal] load build context
+#5 transferring context: 663B 0.0s done
+#5 DONE 0.0s
+
+#7 [4/7] RUN chown node:node /app
+#7 CACHED
+
+#8 [6/7] COPY --chown=node:node . .
+#8 CACHED
+
+#9 [3/7] COPY --chown=node:node package.json package-lock.json ./
+#9 CACHED
+
+#10 [5/7] RUN npm ci
+#10 CACHED
+
+#11 [2/7] WORKDIR /app
+#11 CACHED
+
+#12 [7/7] RUN mkdir -p /app/.wrangler
+#12 CACHED
+
+#13 exporting to image
+#13 exporting layers 0.0s done
+#13 exporting manifest sha256:4bc6c9466306d8b0a0bff8f80fbac34629db97efe3b2cb9005b871edf38700e5 0.0s done
+#13 exporting config sha256:14bae79749cfff35575894c23843cc5dfd0afe1fcd3b0a41c3ee6348bd54942d done
+#13 exporting attestation manifest sha256:208dc5c0d54b75371eaf170493fb412f2194a874571f2075264fa2d779930201
+#13 exporting attestation manifest sha256:208dc5c0d54b75371eaf170493fb412f2194a874571f2075264fa2d779930201 0.0s done
+#13 exporting manifest list sha256:9b43b8f51900aae4143393cfb565f1e49ab80762c81ac07b2a4046f464d472b5 0.0s done
+#13 naming to docker.io/library/devops-cicd-monitoring-module05:ci done
+#13 unpacking to docker.io/library/devops-cicd-monitoring-module05:ci
+#13 unpacking to docker.io/library/devops-cicd-monitoring-module05:ci 7.1s done
+#13 DONE 7.5s
+
+#14 resolving provenance for metadata file
+#14 DONE 0.1s
+ Image devops-cicd-monitoring-module05:ci Built
+ Network devops-cicd-monitoring-module05_taskflow Creating
+ Volume devops-cicd-monitoring-module05_wrangler-state Creating
+ Volume devops-cicd-monitoring-module05_wrangler-state Creating
+ Network devops-cicd-monitoring-module05_taskflow Creating
+ Volume devops-cicd-monitoring-module05_wrangler-state Created
+ Volume devops-cicd-monitoring-module05_wrangler-state Created
+ Network devops-cicd-monitoring-module05_taskflow Created
+ Network devops-cicd-monitoring-module05_taskflow Created
+ Container taskflow-module05-ci Creating
+ Container taskflow-module05-ci Created
+ Container taskflow-module05-ci Starting
+ Container taskflow-module05-ci Started
+ Container taskflow-module05-ci Waiting
+container taskflow-module05-ci exited (1)
+DOCKER_UP_RETRY_EXIT=1
+taskflow-module05-ci  |
+taskflow-module05-ci  | > devops-cicd-monitoring-module05@1.0.0 db:migrate:local
+taskflow-module05-ci  | > wrangler d1 migrations apply taskflow-module05 --local
+taskflow-module05-ci  |
+taskflow-module05-ci  |
+taskflow-module05-ci  |  ⛅️ wrangler 4.159.0
+taskflow-module05-ci  | ────────────────────
+taskflow-module05-ci  | Resource location: local
+taskflow-module05-ci  |
+taskflow-module05-ci  | Use --remote if you want to access the remote instance.
+taskflow-module05-ci  |
+taskflow-module05-ci  | Error: spawn /app/node_modules/@cloudflare/workerd-linux-64/bin/workerd ENOENT
+taskflow-module05-ci  |     at ChildProcess._handle.onexit (node:internal/child_process:285:19)
+taskflow-module05-ci  |     at onErrorNT (node:internal/child_process:483:16)
+taskflow-module05-ci  |     at process.processTicksAndRejections (node:internal/process/task_queues:89:21) {
+taskflow-module05-ci  |   errno: -2,
+taskflow-module05-ci  |   code: 'ENOENT',
+taskflow-module05-ci  |   syscall: 'spawn /app/node_modules/@cloudflare/workerd-linux-64/bin/workerd',
+taskflow-module05-ci  |   path: '/app/node_modules/@cloudflare/workerd-linux-64/bin/workerd',
+taskflow-module05-ci  |   spawnargs: [
+taskflow-module05-ci  |     'serve',
+taskflow-module05-ci  |     '--binary',
+taskflow-module05-ci  |     '--experimental',
+taskflow-module05-ci  |     '--socket-addr=entry=127.0.0.1:0',
+taskflow-module05-ci  |     '--external-addr=loopback=127.0.0.1:40947',
+taskflow-module05-ci  |     '--control-fd=3',
+taskflow-module05-ci  |     '-'
+taskflow-module05-ci  |   ]
+taskflow-module05-ci  | }
+
+=== Retry on Debian slim and host port 8878 ===
+ Network devops-cicd-monitoring-module05_taskflow Creating
+ Volume devops-cicd-monitoring-module05_wrangler-state Creating
+ Network devops-cicd-monitoring-module05_taskflow Creating
+ Volume devops-cicd-monitoring-module05_wrangler-state Creating
+ Volume devops-cicd-monitoring-module05_wrangler-state Created
+ Volume devops-cicd-monitoring-module05_wrangler-state Created
+ Network devops-cicd-monitoring-module05_taskflow Created
+ Network devops-cicd-monitoring-module05_taskflow Created
+ Container taskflow-module05-ci Creating
+ Container taskflow-module05-ci Created
+ Container taskflow-module05-ci Starting
+ Container taskflow-module05-ci Started
+ Container taskflow-module05-ci Waiting
+container taskflow-module05-ci exited (1)
+DOCKER_UP_DEBIAN_EXIT=1
+taskflow-module05-ci  |
+taskflow-module05-ci  | > devops-cicd-monitoring-module05@1.0.0 db:migrate:local
+taskflow-module05-ci  | > wrangler d1 migrations apply taskflow-module05 --local
+taskflow-module05-ci  |
+taskflow-module05-ci  |
+taskflow-module05-ci  |  ⛅️ wrangler 4.159.0
+taskflow-module05-ci  | ────────────────────
+taskflow-module05-ci  | Resource location: local
+taskflow-module05-ci  |
+taskflow-module05-ci  | Use --remote if you want to access the remote instance.
+taskflow-module05-ci  |
+taskflow-module05-ci  | service internet: TLS configuration: unexpected error: No CA certificates were loaded from the system
+taskflow-module05-ci  |
+taskflow-module05-ci  | [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mThe Workers runtime failed to start. There was likely a problem with the workerd binary or your configuration.[0m
+taskflow-module05-ci  |
+taskflow-module05-ci  |   Runtime stderr:
+taskflow-module05-ci  |   {"timestamp":"1794328509692","level":"error","source":"src/workerd/server/server/entry.rs:171","message":"service internet: TLS configuration: unexpected error: No CA certificates were loaded from the system","context_depth":0}
+taskflow-module05-ci  |
+taskflow-module05-ci  |
+taskflow-module05-ci  | [32mIf you think this is a bug then please create an issue at https://github.com/cloudflare/workers-sdk/issues/new/choose[0m
+taskflow-module05-ci  | 🪵  Logs were written to "/app/.wrangler/xdg/.wrangler/logs/wrangler-2026-11-10_16-35-04_697.log"
+
+=== Debian slim with CA certificates, host port 8878 ===
+ Network devops-cicd-monitoring-module05_taskflow Creating
+ Volume devops-cicd-monitoring-module05_wrangler-state Creating
+ Network devops-cicd-monitoring-module05_taskflow Creating
+ Volume devops-cicd-monitoring-module05_wrangler-state Creating
+ Volume devops-cicd-monitoring-module05_wrangler-state Created
+ Volume devops-cicd-monitoring-module05_wrangler-state Created
+ Network devops-cicd-monitoring-module05_taskflow Created
+ Network devops-cicd-monitoring-module05_taskflow Created
+ Container taskflow-module05-ci Creating
+ Container taskflow-module05-ci Created
+ Container taskflow-module05-ci Starting
+ Container taskflow-module05-ci Started
+ Container taskflow-module05-ci Waiting
+
+=== Retry with Miniflare tmpfs mount ===
+ Network devops-cicd-monitoring-module05_taskflow Creating
+ Volume devops-cicd-monitoring-module05_wrangler-state Creating
+ Network devops-cicd-monitoring-module05_taskflow Creating
+ Volume devops-cicd-monitoring-module05_wrangler-state Creating
+ Volume devops-cicd-monitoring-module05_wrangler-state Created
+ Volume devops-cicd-monitoring-module05_wrangler-state Created
+ Network devops-cicd-monitoring-module05_taskflow Created
+ Network devops-cicd-monitoring-module05_taskflow Created
+ Container taskflow-module05-ci Creating
+ Container taskflow-module05-ci Created
+ Container taskflow-module05-ci Starting
+ Container taskflow-module05-ci Started
+ Container taskflow-module05-ci Waiting
+ Container taskflow-module05-ci Healthy
+DOCKER_UP_TMPFS_EXIT=0
+
+> devops-cicd-monitoring-module05@1.0.0 test:smoke
+> node scripts/smoke.mjs
+
+PASS health endpoint and D1 connection
+PASS static TaskFlow page returns HTTP 200
+PASS invalid filter rejected
+PASS cross-origin mutation rejected
+PASS blank title rejected
+PASS oversized request body rejected
+PASS create task
+PASS read pending task
+PASS mark task completed
+PASS completed filter
+PASS task statistics
+PASS delete test task
+PASS missing task returns HTTP 404
+SMOKE_OK base=http://127.0.0.1:8878
+DOCKER_SMOKE_TMPFS_EXIT=0
+NAME                   IMAGE                                COMMAND                  SERVICE   CREATED          STATUS                    PORTS
+taskflow-module05-ci   devops-cicd-monitoring-module05:ci   "docker-entrypoint.s…"   worker    40 seconds ago   Up 39 seconds (healthy)   127.0.0.1:8878->8787/tcp
+taskflow-module05-ci  |
+taskflow-module05-ci  | > devops-cicd-monitoring-module05@1.0.0 db:migrate:local
+taskflow-module05-ci  | > wrangler d1 migrations apply taskflow-module05 --local
+taskflow-module05-ci  |
+taskflow-module05-ci  |
+taskflow-module05-ci  |  ⛅️ wrangler 4.159.0
+taskflow-module05-ci  | ────────────────────
+taskflow-module05-ci  | Resource location: local
+taskflow-module05-ci  |
+taskflow-module05-ci  | Use --remote if you want to access the remote instance.
+taskflow-module05-ci  |
+taskflow-module05-ci  | Migrations to be applied:
+taskflow-module05-ci  | ┌───────────────────────┐
+taskflow-module05-ci  | │ name                  │
+taskflow-module05-ci  | ├───────────────────────┤
+taskflow-module05-ci  | │ 0001_create_tasks.sql │
+taskflow-module05-ci  | └───────────────────────┘
+taskflow-module05-ci  | ? About to apply 1 migration(s)
+taskflow-module05-ci  | Your database may not be available to serve requests during the migration, continue?
+taskflow-module05-ci  | 🤖 Using fallback value in non-interactive context: yes
+taskflow-module05-ci  | 🌀 Executing on local database taskflow-module05 (00000000-0000-4000-8000-000000000005) from .wrangler/state/v3/d1:
+taskflow-module05-ci  | 🌀 To execute on your remote database, add a --remote flag to your wrangler command.
+taskflow-module05-ci  | 🚣 3 commands executed successfully.
+taskflow-module05-ci  | ┌───────────────────────┬────────┐
+taskflow-module05-ci  | │ name                  │ status │
+taskflow-module05-ci  | ├───────────────────────┼────────┤
+taskflow-module05-ci  | │ 0001_create_tasks.sql │ ✅     │
+taskflow-module05-ci  | └───────────────────────┴────────┘
+taskflow-module05-ci  |
+taskflow-module05-ci  | > devops-cicd-monitoring-module05@1.0.0 dev
+taskflow-module05-ci  | > wrangler dev --port 8787 --ip 0.0.0.0
+taskflow-module05-ci  |
+taskflow-module05-ci  |
+taskflow-module05-ci  |  ⛅️ wrangler 4.159.0 (update available 4.160.0)
+taskflow-module05-ci  | ───────────────────────────────────────────────
+taskflow-module05-ci  | Your Worker has access to the following bindings:
+taskflow-module05-ci  | Binding                             Resource         Mode
+taskflow-module05-ci  | env.DB (taskflow-module05)          D1 Database      local
+taskflow-module05-ci  | env.ASSETS                          Assets           local
+taskflow-module05-ci  |
+taskflow-module05-ci  | ⎔ Starting local server...
+taskflow-module05-ci  | [wrangler:info] Ready on http://0.0.0.0:8787
+taskflow-module05-ci  | [wrangler:info] - http://127.0.0.1:8787
+taskflow-module05-ci  | [wrangler:info] - http://172.20.0.2:8787
+taskflow-module05-ci  | {"event":"http_request","requestId":"f09d670f-04d7-4d1c-9bd9-a0f34b4a7a2b","method":"GET","route":"/api/health","status":200,"durationMs":42}
+taskflow-module05-ci  | [wrangler:info] GET /api/health 200 OK (180ms)
+taskflow-module05-ci  | {"event":"http_request","requestId":"b8b3323d-386c-4185-8ab8-8d39ccebeb42","method":"GET","route":"/api/health","status":200,"durationMs":3}
+taskflow-module05-ci  | [wrangler:info] GET /api/health 200 OK (15ms)
+taskflow-module05-ci  | {"event":"http_request","requestId":"325b7013-5acb-4ad9-92b4-eae9a3c8b650","method":"GET","route":"/","status":200,"durationMs":37}
+taskflow-module05-ci  | [wrangler:info] GET / 200 OK (65ms)
+taskflow-module05-ci  | {"event":"http_request","requestId":"3fd08314-c981-4981-ae38-78559eccf704","method":"GET","route":"tasks","status":400,"durationMs":0}
+taskflow-module05-ci  | [wrangler:info] GET /api/tasks 400 Bad Request (18ms)
+taskflow-module05-ci  | {"event":"http_request","requestId":"aab4c0a2-2569-441c-b53f-4ce0b1a2ebaf","method":"POST","route":"tasks","status":403,"durationMs":0}
+taskflow-module05-ci  | [wrangler:info] POST /api/tasks 403 Forbidden (41ms)
+taskflow-module05-ci  | {"event":"http_request","requestId":"286b1d79-4ecd-4936-8bb3-294ebb31fbce","method":"POST","route":"tasks","status":400,"durationMs":6}
+taskflow-module05-ci  | [wrangler:info] POST /api/tasks 400 Bad Request (19ms)
+taskflow-module05-ci  | {"event":"http_request","requestId":"5302f734-d76c-466d-8962-d70a60ed32e3","method":"POST","route":"tasks","status":413,"durationMs":0}
+taskflow-module05-ci  | [wrangler:info] POST /api/tasks 413 Payload Too Large (14ms)
+taskflow-module05-ci  | {"event":"http_request","requestId":"5873a169-14eb-4d0f-aaf2-e389344373fd","method":"POST","route":"tasks","status":201,"durationMs":21}
+taskflow-module05-ci  | [wrangler:info] POST /api/tasks 201 Created (33ms)
+taskflow-module05-ci  | {"event":"http_request","requestId":"cc5f05ab-c569-4308-8a57-7ff80e4007c2","method":"GET","route":"tasks","status":200,"durationMs":4}
+taskflow-module05-ci  | [wrangler:info] GET /api/tasks 200 OK (17ms)
+taskflow-module05-ci  | {"event":"http_request","requestId":"9dec41a8-47d5-4988-99e8-4a1a96a2e7ff","method":"PATCH","route":"task_item","status":200,"durationMs":9}
+taskflow-module05-ci  | [wrangler:info] PATCH /api/tasks/27dc617b-9d56-49fa-b8be-c6532833f007 200 OK (21ms)
+taskflow-module05-ci  | {"event":"http_request","requestId":"b1449763-b00d-48d0-9412-b541eff3fc1c","method":"GET","route":"tasks","status":200,"durationMs":3}
+taskflow-module05-ci  | [wrangler:info] GET /api/tasks 200 OK (16ms)
+taskflow-module05-ci  | {"event":"http_request","requestId":"6cb836c7-3e8d-4c77-939b-fe8f8fb0f0e3","method":"GET","route":"/api/stats","status":200,"durationMs":3}
+taskflow-module05-ci  | [wrangler:info] GET /api/stats 200 OK (16ms)
+taskflow-module05-ci  | {"event":"http_request","requestId":"38b6887f-2eb1-4d0d-9c74-e43f99fdf14a","method":"DELETE","route":"task_item","status":200,"durationMs":4}
+taskflow-module05-ci  | [wrangler:info] DELETE /api/tasks/27dc617b-9d56-49fa-b8be-c6532833f007 200 OK (14ms)
+taskflow-module05-ci  | {"event":"http_request","requestId":"87ef21a5-98cd-44d1-a7c9-764e22a6939e","method":"DELETE","route":"task_item","status":404,"durationMs":2}
+taskflow-module05-ci  | [wrangler:info] DELETE /api/tasks/27dc617b-9d56-49fa-b8be-c6532833f007 404 Not Found (13ms)
+ Container taskflow-module05-ci Stopping
+ Container taskflow-module05-ci Stopped
+ Container taskflow-module05-ci Removing
+ Container taskflow-module05-ci Removed
+ Volume devops-cicd-monitoring-module05_wrangler-state Removing
+ Network devops-cicd-monitoring-module05_taskflow Removing
+ Volume devops-cicd-monitoring-module05_wrangler-state Removed
+ Network devops-cicd-monitoring-module05_taskflow Removed
+DOCKER_CLEANUP_TMPFS_EXIT=0
+Untagged: devops-cicd-monitoring-module05:ci
+Deleted: sha256:f5507b93e0a7b60d2466eb69de505b4b2c1d742e031e25ec263455ac23c3fc38
+DOCKER_IMAGE_CLEANUP_EXIT=0

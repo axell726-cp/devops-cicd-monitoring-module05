@@ -1,0 +1,18 @@
+
+ ⛅️ wrangler 4.159.0 (update available 4.160.0)
+───────────────────────────────────────────────
+✅ Successfully created DB 'taskflow-module05' in region ENAM
+Created your new D1 database.
+
+To access your new D1 Database in your Worker, add the following snippet to your configuration file:
+{
+  "d1_databases": [
+    {
+      "binding": "taskflow_module05",
+      "database_name": "taskflow-module05",
+      "database_id": "da9d56d7-a22e-4b1d-bfac-c5234de2bb78"
+    }
+  ]
+}
+? Would you like Wrangler to add it on your behalf?
+🤖 Using fallback value in non-interactive context: no
