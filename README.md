@@ -65,10 +65,10 @@ If port `8787` is occupied, set `$env:HOST_PORT='8878'` before `docker compose u
 
 Add these repository settings before a `main` push:
 
-- Actions secret `CLOUDFLARE_API_TOKEN`: a least-privilege token scoped to the existing Module 05 Worker and D1 database for deploy, remote migrations and tail logs.
+- Actions secret `CLOUDFLARE_API_TOKEN`: a least-privilege token scoped to the existing Module 05 Worker for deployment and monitoring. Application database queries use the Worker D1 binding.
 - Actions variable `CLOUDFLARE_ACCOUNT_ID`: the account ID; it is configuration, not a secret.
 
-The `main` workflow runs validation first. The deploy job applies migrations, deploys the Worker, runs public HTTPS CRUD tests, and captures sanitized request logs and metrics. Pull requests validate but do not deploy. The workflow has no paid container registry.
+The `main` workflow runs validation and Docker first, then deploys the existing Worker, runs public HTTPS CRUD tests, and captures sanitized request logs and metrics. Pull requests validate but do not deploy. The initial D1 schema was migrated separately during provisioning; future schema migrations use `npm run db:migrate:remote` with an authenticated maintainer session before deployment. CI does not receive direct D1 API access; the running Worker accesses D1 through its binding.
 
 ## Monitoring and security
 
