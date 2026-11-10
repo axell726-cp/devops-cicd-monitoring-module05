@@ -11,5 +11,8 @@ Evidence is genuine output from the local Module 05 Worker, Docker Desktop, Wran
 - `cloudflare-public-smoke.txt`, `cloudflare-live-health.txt` — public HTTPS response and CRUD/API smoke tests.
 - `cloudflare-live-monitoring.json` — sanitized live Worker invocation metrics and structured `/api/health` log.
 - `github-validation-attempt1.md`, `github-actions-validation.md`, `github-actions-local/` — initial failure and successful local/Docker Actions validation with downloaded logs. The initial `main` attempt and its D1 authorization blocker are recorded in `github-actions-run-42864925787.md`.
+- `github-actions-run-42864925787.md` — initial main deployment blocker, not a successful deployment.
+- `github-actions-deployment.md`, `github-actions-main-validation/`, `github-actions-deployment/` — successful main run 42865935108 with actual lint, build, local/Docker smoke, deployment, remote HTTPS checks and sanitized monitoring metrics.
+- public-health-check.txt — independent post-deployment HTTPS health request returned HTTP 200 with D1 connected.
 
 Account identifiers, credentials and pre-existing resource names are omitted. The D1 database ID in the project's Wrangler configuration is the binding identifier required by Wrangler, not a credential.

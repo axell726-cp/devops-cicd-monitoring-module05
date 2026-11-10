@@ -1,0 +1,38 @@
+
+ ⛅️ wrangler 4.159.0 (update available 4.160.0)
+───────────────────────────────────────────────
+Your Worker has access to the following bindings:
+Binding                             Resource         Mode
+env.DB (taskflow-module05)          D1 Database      local
+env.ASSETS                          Assets           local
+
+⎔ Starting local server...
+[wrangler:info] Ready on http://127.0.0.1:8787
+{"event":"http_request","requestId":"520cd62a-038b-4c3e-b65d-feb9088e34ca","method":"GET","route":"/api/health","status":200,"durationMs":8}
+[wrangler:info] GET /api/health 200 OK (21ms)
+{"event":"http_request","requestId":"71515094-0e37-4eac-a013-5446f18ef838","method":"GET","route":"/api/health","status":200,"durationMs":2}
+[wrangler:info] GET /api/health 200 OK (9ms)
+{"event":"http_request","requestId":"ef5526e8-51fa-4534-8bc8-a09dffd8157f","method":"GET","route":"/","status":200,"durationMs":4}
+[wrangler:info] GET / 200 OK (12ms)
+{"event":"http_request","requestId":"243e7102-dc51-481b-b7e0-2ff6239181a5","method":"GET","route":"tasks","status":400,"durationMs":0}
+[wrangler:info] GET /api/tasks 400 Bad Request (8ms)
+{"event":"http_request","requestId":"e4f49602-e46f-4a0f-93b1-d48dd76aa8e0","method":"POST","route":"tasks","status":403,"durationMs":0}
+[wrangler:info] POST /api/tasks 403 Forbidden (10ms)
+{"event":"http_request","requestId":"bb56ca0b-f3a8-40f1-ba07-8360a04ecc53","method":"POST","route":"tasks","status":400,"durationMs":1}
+[wrangler:info] POST /api/tasks 400 Bad Request (10ms)
+{"event":"http_request","requestId":"a62e2c15-939e-4e65-bc44-487177660781","method":"POST","route":"tasks","status":413,"durationMs":0}
+[wrangler:info] POST /api/tasks 413 Payload Too Large (7ms)
+{"event":"http_request","requestId":"e33bfbd3-be9e-4798-a707-0cf51802acb4","method":"POST","route":"tasks","status":201,"durationMs":3}
+[wrangler:info] POST /api/tasks 201 Created (9ms)
+{"event":"http_request","requestId":"1c85f3d1-8a60-4e40-9d61-6d226716fd42","method":"GET","route":"tasks","status":200,"durationMs":2}
+[wrangler:info] GET /api/tasks 200 OK (8ms)
+{"event":"http_request","requestId":"e41103b7-21ae-4748-8b98-e8059f6d72d0","method":"PATCH","route":"task_item","status":200,"durationMs":4}
+[wrangler:info] PATCH /api/tasks/596918c9-5e18-4759-9615-cf8d25d5d3a9 200 OK (10ms)
+{"event":"http_request","requestId":"5d325c1e-562a-494c-85de-2bfcd35b84ad","method":"GET","route":"tasks","status":200,"durationMs":2}
+[wrangler:info] GET /api/tasks 200 OK (7ms)
+{"event":"http_request","requestId":"69f3293f-5bcc-43d6-a14e-6441b7e09b69","method":"GET","route":"/api/stats","status":200,"durationMs":2}
+[wrangler:info] GET /api/stats 200 OK (7ms)
+{"event":"http_request","requestId":"1e651028-a526-4b54-9ce1-61a4a553a2dc","method":"DELETE","route":"task_item","status":200,"durationMs":3}
+[wrangler:info] DELETE /api/tasks/596918c9-5e18-4759-9615-cf8d25d5d3a9 200 OK (7ms)
+{"event":"http_request","requestId":"1c78abd3-5035-4f40-8678-45f6ae3cb02b","method":"DELETE","route":"task_item","status":404,"durationMs":2}
+[wrangler:info] DELETE /api/tasks/596918c9-5e18-4759-9615-cf8d25d5d3a9 404 Not Found (9ms)
